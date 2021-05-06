@@ -6,7 +6,8 @@ module.exports = async (deployer) => {
   await deployer.link(ConvertLib, MetaCoin);
   const metaCoinInstance = await deployer.deploy(MetaCoin);
 
-  // You can use both . cute choice is yours
-  console.log("metaCoinInstance", metaCoinInstance.address);
-  console.log("MetaCoin.address", MetaCoin.address);
+  // DEBUG
+  // 1st create transaction
+  // 2nd run that transaction from truffle develop
+  // 3rd pick that transaction hash and use command truffle debug hash
 };
