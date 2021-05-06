@@ -9,6 +9,8 @@ ctrl + ~ terminal
 ctrl + B file pane
 ctrl shift Q - log the selected variable
 
+ctrl shift p to see git log extension
+
 ### truffle commands
 
 truffle develop
