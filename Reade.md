@@ -7,6 +7,13 @@ Muzammil Coin Repo
 F11 fullscreen
 ctrl + ~ terminal
 ctrl + B file pane
+ctrl shift Q - log the selected variable
+
+### truffle commands
+
+truffle develop
+migrate
+migrate --reset
 
 ### Some general things
 
