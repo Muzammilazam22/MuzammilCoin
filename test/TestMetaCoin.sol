@@ -1,25 +1,31 @@
 pragma solidity >=0.4.25 <0.7.0;
-
+// SPDX-License-Identifier: MIT
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
-import "../contracts/MetaCoin.sol";
+import "../contracts/MuzammilCoin.sol";
 
-contract TestMetaCoin {
+contract TestMuzammilCoin {
+    function testInitialBalanceUsingDeployedContract() public {
+        MuzammilCoin meta = MuzammilCoin(DeployedAddresses.MuzammilCoin());
 
-  function testInitialBalanceUsingDeployedContract() public {
-    MetaCoin meta = MetaCoin(DeployedAddresses.MetaCoin());
+        uint256 expected = 10000;
 
-    uint expected = 10000;
+        Assert.equal(
+            meta.getBalance(tx.origin),
+            expected,
+            "Owner should have 10000 MuzammilCoin initially"
+        );
+    }
 
-    Assert.equal(meta.getBalance(tx.origin), expected, "Owner should have 10000 MetaCoin initially");
-  }
+    function testInitialBalanceWithNewMuzammilCoin() public {
+        MuzammilCoin meta = new MuzammilCoin();
 
-  function testInitialBalanceWithNewMetaCoin() public {
-    MetaCoin meta = new MetaCoin();
+        uint256 expected = 10000;
 
-    uint expected = 10000;
-
-    Assert.equal(meta.getBalance(tx.origin), expected, "Owner should have 10000 MetaCoin initially");
-  }
-
+        Assert.equal(
+            meta.getBalance(tx.origin),
+            expected,
+            "Owner should have 10000 MuzammilCoin initially"
+        );
+    }
 }

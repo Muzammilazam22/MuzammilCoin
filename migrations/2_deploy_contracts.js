@@ -1,14 +1,14 @@
 const ConvertLib = artifacts.require("ConvertLib");
-const MetaCoin = artifacts.require("MetaCoin");
+const MuzammilCoin = artifacts.require("MuzammilCoin");
 
 module.exports = async (deployer, networks, addresses) => {
   await deployer.deploy(ConvertLib);
-  await deployer.link(ConvertLib, MetaCoin);
-  const metaCoinInstance = await deployer.deploy(MetaCoin);
+  await deployer.link(ConvertLib, MuzammilCoin);
+  const metaCoinInstance = await deployer.deploy(MuzammilCoin);
 
   // bill of roti on tandoor example
-  const txHash = await metaCoinInstance.sendCoin(addresses[1], 100);
-  console.log("txHash", txHash.tx);
+  //const txHash = await metaCoinInstance.sendCoin(addresses[1], 100);
+  //console.log("txHash", txHash.tx);
 
   // DEBUG
   // 1st create transaction
