@@ -6,24 +6,24 @@ import "../contracts/MuzammilCoin.sol";
 
 contract TestMuzammilCoin {
     function testInitialBalanceUsingDeployedContract() public {
-        MuzammilCoin meta = MuzammilCoin(DeployedAddresses.MuzammilCoin());
+        MuzammilCoin muzammil = MuzammilCoin(DeployedAddresses.MuzammilCoin());
 
         uint256 expected = 10000;
 
         Assert.equal(
-            meta.getBalance(tx.origin),
+            muzammil.getBalance(tx.origin),
             expected,
             "Owner should have 10000 MuzammilCoin initially"
         );
     }
 
     function testInitialBalanceWithNewMuzammilCoin() public {
-        MuzammilCoin meta = new MuzammilCoin();
+        MuzammilCoin muzammil = new MuzammilCoin();
 
         uint256 expected = 10000;
 
         Assert.equal(
-            meta.getBalance(tx.origin),
+            muzammil.getBalance(tx.origin),
             expected,
             "Owner should have 10000 MuzammilCoin initially"
         );
