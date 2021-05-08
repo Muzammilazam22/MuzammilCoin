@@ -6,7 +6,7 @@ module.exports = async (deployer, networks, addresses) => {
   await deployer.link(ConvertLib, MetaCoin);
   const metaCoinInstance = await deployer.deploy(MetaCoin);
 
-  // bill of roi on tandoor example
+  // bill of roti on tandoor example
   const txHash = await metaCoinInstance.sendCoin(addresses[1], 100);
   console.log("txHash", txHash.tx);
 
